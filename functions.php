@@ -99,6 +99,15 @@ function school_ld_theme_setup() {
 			'flex-height' => true,
 		)
 	);
+
+    /**
+	 * Add support for Block Editor features.
+	 *
+	 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/
+	 */
+	add_theme_support( 'wp-block-styles' );
+	add_theme_support( 'responsive-embeds' );
+	// add_theme_support( 'align-wide' );
 }
 add_action( 'after_setup_theme', 'school_ld_theme_setup' );
 
