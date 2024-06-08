@@ -46,6 +46,11 @@ function school_ld_theme_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
+    // Custom image Crop Sizes 
+      
+    //    add_image_size( 'landscape-blog', 1920, 1280, true );
+
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
@@ -67,6 +72,7 @@ function school_ld_theme_setup() {
 			'caption',
 			'style',
 			'script',
+            'navigation-widgets',
 		)
 	);
 
@@ -178,11 +184,25 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
+
 /**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+// Add Theme Color Meta Tag 
+function fwd_theme_color() {
+    echo '<meta name="theme-color" content="#fff200">';
+}
+add_action( 'wp_head', 'fwd_theme_color', 1 );
+
+// Change the excerpt length
+function fwd_excerpt_length( $length ) {
+    return 55;
+}
+add_filter( 'excerpt_length', 'fwd_excerpt_length', 999 );
+
 
 
