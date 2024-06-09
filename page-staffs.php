@@ -54,10 +54,12 @@ get_header();
                             $query = new WP_Query( $args );
                     
                             if ( $query->have_posts() ) {
+                                echo '<section class="staff-wrapper">';
                                 echo '<h2>' . esc_html( $term->name ) . '</h2>';
                                 while( $query->have_posts() ) {
                                     $query->the_post(); 
                                     if ( function_exists( 'get_field' ) ) {
+                                        echo '<article class="staff-item">';
                                         echo '<h3 id="'. esc_attr( get_the_ID() ) .'">'. esc_html( get_the_title() ) .'</h3>';
                                         if ( get_field( 'short_staff_biography' ) ) {
                                             the_field( 'short_staff_biography' ); ;
@@ -72,8 +74,10 @@ get_header();
                                             echo '<p><a href="' . esc_url( $website_url ) . '">Instructor Website</a></p>';
                                         
                                         }
+                                        echo '</article>';
                                     }
                                 }
+                                echo '</section>';
                                 wp_reset_postdata();
                             }    
                         }
