@@ -114,7 +114,8 @@ function school_ld_theme_setup() {
 	 */
 	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'responsive-embeds' );
-	// add_theme_support( 'align-wide' );
+	add_theme_support( 'align-wide' );
+    add_theme_support( 'align-full' );
 }
 add_action( 'after_setup_theme', 'school_ld_theme_setup' );
 
