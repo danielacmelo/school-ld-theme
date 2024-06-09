@@ -88,9 +88,9 @@ function school_register_taxonomies() {
 add_action( 'init', 'school_register_taxonomies');
 
 //This flushes the permalinks when switching themes
-function fwd_rewrite_flush() {
-    fwd_register_custom_post_types();
-    fwd_register_taxonomies();
+function school_rewrite_flush() {
+    school_register_custom_post_types();
+    school_register_taxonomies();
     flush_rewrite_rules();
 }
 add_action( 'after_switch_theme', 'school_rewrite_flush' );

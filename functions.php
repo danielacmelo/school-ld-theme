@@ -248,10 +248,11 @@ add_filter( 'excerpt_length', 'fwd_excerpt_length', 999 );
 // Change placeholder CPT Title 
 function school_change_title_text( $title ){
     $screen = get_current_screen();
-    if  ( 'school-staf' == $screen->post_type ) {
+    if  ( 'school-staff' == $screen->post_type ) {
         $title = 'Add Staff Name';
     }
     return $title;
 }   
 
+add_filter( 'enter_title_here', 'school_change_title_text' );
 
