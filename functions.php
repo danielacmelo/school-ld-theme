@@ -165,7 +165,7 @@ function school_ld_theme_scripts() {
 	}
 
     // Enqueue the AOS
-    if ( is_singular('post') || is_archive() || is_home() ) {
+    if ( is_singular('post') || is_home() ) {
         wp_enqueue_style(
             'aos-css',
             get_template_directory_uri() . '/aos/aos.css',
