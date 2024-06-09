@@ -48,7 +48,8 @@ function school_ld_theme_setup() {
 
     // Custom image Crop Sizes 
       
-    //    add_image_size( 'landscape-blog', 1920, 1280, true );
+    add_image_size( '1920x1280', 1920, 1280, true );
+    add_image_size( '300x200', 300, 200, true );
 
 
 	// This theme uses wp_nav_menu() in one location.
