@@ -73,6 +73,8 @@ function school_register_custom_post_types() {
         'set_featured_image'    => __( 'Set student featured image'),
         'remove_featured_image' => __( 'Remove student featured image'),
         'use_featured_image'    => __( 'Use as featured image'),
+        
+
     );
 
     $args = array(
@@ -92,11 +94,14 @@ function school_register_custom_post_types() {
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-archive',
         'supports'           => array( 'title', 'thumbnail', 'editor' ),
+        'template'           => array(
+            array( 'core/paragraph', array( 'placeholder' => 'Add a short biography...' ) ),
+            array( 'core/button', array('placeholder' => 'Add portfolio link...') ),
+        ),
+        'template_lock'      => 'all',
     );
 
     register_post_type( 'school-student', $args );
-
-
 
 }
 add_action( 'init', 'school_register_custom_post_types' );

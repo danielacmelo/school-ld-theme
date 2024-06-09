@@ -249,7 +249,10 @@ add_filter( 'excerpt_length', 'fwd_excerpt_length', 999 );
 function school_change_title_text( $title ){
     $screen = get_current_screen();
     if  ( 'school-staff' == $screen->post_type ) {
-        $title = 'Add Staff Name';
+        $title = 'Add staff name';
+    }
+    if  ( 'school-student' == $screen->post_type ) {
+        $title = 'Add student name';
     }
     return $title;
 }   
