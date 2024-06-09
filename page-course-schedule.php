@@ -20,6 +20,8 @@ get_header();
         <div class="entry-content">
             <?php
             the_content();
+
+            // Display Course Schedule
             
             // Check if the repeater field has rows of data
             if( have_rows('weekly_course_schedule') ):

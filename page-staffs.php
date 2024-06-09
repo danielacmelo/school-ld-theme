@@ -8,7 +8,6 @@
  * @package School_LD_Theme
  */
 
-echo 'Template: page-staff.php'; // Debugging line
 
 get_header();
 ?>
@@ -81,12 +80,10 @@ get_header();
                                 wp_reset_postdata();
                             }    
                         }
-                    }   
-            
+                    }          
                    
                             ?>
                 </div><!-- .entry-content --> 
-
 
         
         <?php endwhile; // End of the loop.?>
