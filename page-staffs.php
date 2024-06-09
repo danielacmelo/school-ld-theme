@@ -69,9 +69,7 @@ get_header();
                                             echo '</p>';
                                         }
                                         if ( get_field( 'instructor_website' ) ) {
-                                            $website_url = get_field( 'instructor_website' );
-                                            echo '<p><a href="' . esc_url( $website_url ) . '">Instructor Website</a></p>';
-                                        
+                                            echo '<p><a href="' . esc_url( get_field( 'instructor_website' ) ) . '">Instructor Website</a></p>';
                                         }
                                         echo '</article>';
                                     }
