@@ -14,11 +14,20 @@ get_header();
 
 		<?php
 		while ( have_posts() ) :
-			the_post();
-
-        get_template_part( 'template-parts/content', 'page' );   
- 
+			the_post();  
 		?>
+
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <header class="entry-header">
+                <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+            </header><!-- .entry-header -->
+        
+            
+            <div class="entry-content">
+                <?php
+                the_content();
+                ?>
+        </div><!-- .entry-content -->         
 
         <section class="blog-posts">
         <h2><?php esc_html_e( 'Recent News', 'school-ld' ); ?></h2> 
@@ -43,13 +52,8 @@ get_header();
                     wp_reset_postdata();
                 }
                 ?> 
-
-      
         </section>
-
-        
-
-			
+	
         <?php
 		endwhile; // End of the loop.
 		?>
