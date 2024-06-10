@@ -17,26 +17,44 @@ get_header();
 			<header class="page-header">
 				<?php
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
+				// the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+            $args = array(
+                'post_type'      => 'school-student',
+                'posts_per_page' => -1,
+                'orderby'        => 'title',
+                'order'          => 'ASC'
+            );
 
-			endwhile;
+            
+            $query = new WP_Query( $args );
 
-			the_posts_navigation();
+            if ( $query->have_posts() ) {
+                echo '<section class="students">';
+                while( $query->have_posts() ) {
+                    $query->the_post(); 
+                    ?>
+                    <article class="student">
+                        <a href="<?php the_permalink(); ?>">
+                            <h2><?php the_title(); ?></h2>
+                            <?php the_post_thumbnail('300x220'); ?>
+                        </a>
+                        <?php the_excerpt(); ?>
+                    </article>
+                    <?php
+                }
+                wp_reset_postdata();
+                echo '</section>';
+            } 
+            
+        ?>
 
+            
+        <?php     
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
@@ -47,5 +65,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
