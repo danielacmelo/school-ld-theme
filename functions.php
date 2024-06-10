@@ -49,6 +49,7 @@ function school_ld_theme_setup() {
     // Custom image Crop Sizes 
       
     add_image_size( '1920x1280', 1920, 1280, true );
+    add_image_size( '300x220', 300, 220, true );
     add_image_size( '300x200', 300, 200, true );
 
 
@@ -233,16 +234,29 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 // Add Theme Color Meta Tag 
-function fwd_theme_color() {
+function school_theme_color() {
     echo '<meta name="theme-color" content="#fff200">';
 }
-add_action( 'wp_head', 'fwd_theme_color', 1 );
+add_action( 'wp_head', 'school_theme_color', 1 );
 
-// Change the excerpt length
-function fwd_excerpt_length( $length ) {
-    return 55;
+
+// Change the excerpt length only for the school-student CPT
+function school_excerpt_length( $length ) {
+    if (is_post_type_archive('school-student') || is_singular('school-student')) {
+        return 25;
+    }
+    return $length;
 }
-add_filter( 'excerpt_length', 'fwd_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'school_excerpt_length', 999 );
+
+// Change the excerpt more text only for the school-student CPT
+function school_excerpt_more( $more ) {
+    if (is_post_type_archive('school-student') || is_singular('school-student')) {
+        $more =  '<a href="'. esc_url(get_permalink()) . '">'. __( 'Read More about the Student...'). '</a>';
+    }
+    return $more;
+}
+add_filter( 'excerpt_more', 'school_excerpt_more' );
 
 
 // Change placeholder CPT Title 
@@ -259,3 +273,5 @@ function school_change_title_text( $title ){
 
 add_filter( 'enter_title_here', 'school_change_title_text' );
 
+// Remove Archive Title Prefix
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
