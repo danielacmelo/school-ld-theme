@@ -51,6 +51,7 @@ function school_ld_theme_setup() {
     add_image_size( '1920x1280', 1920, 1280, true );
     add_image_size( '300x220', 300, 220, true );
     add_image_size( '300x200', 300, 200, true );
+    add_image_size( '200x300', 200, 300, true );
 
 
 	// This theme uses wp_nav_menu() in one location.
