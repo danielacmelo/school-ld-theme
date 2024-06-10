@@ -29,7 +29,6 @@ get_header();
                 'orderby'        => 'title',
                 'order'          => 'ASC'
             );
-
             
             $query = new WP_Query( $args );
 
@@ -44,6 +43,8 @@ get_header();
                             <?php the_post_thumbnail('300x220'); ?>
                         </a>
                         <?php the_excerpt(); ?>
+                        <p>Specialty:<?php display_student_terms('school-student-category'); ?></p>
+                        
                     </article>
                     <?php
                 }

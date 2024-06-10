@@ -225,6 +225,24 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/cpt-taxonomy.php';
 
+// Function to display the terms of a post student
+function display_student_terms( $taxonomy ) {
+    $terms = get_the_terms( get_the_ID(), $taxonomy );
+
+    if ( $terms && ! is_wp_error( $terms ) ) {
+        $term_links = array();
+
+        foreach ( $terms as $term ) {
+            $term_links[] = '<a href="' . esc_url( get_term_link( $term ) ) . '">' . esc_html( $term->name ) . '</a>';
+        }
+
+        $all_terms = join( ', ', $term_links );
+
+        echo '<span class="student-terms-' . esc_attr( $taxonomy ) . '">' . $all_terms . '</span>';
+    } else {
+        echo '<span class="student-terms-' . esc_attr( $taxonomy ) . '">No categorie found.</span>';
+    }
+}
 
 /**
  * Load Jetpack compatibility file.
