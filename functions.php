@@ -169,7 +169,15 @@ add_action( 'widgets_init', 'school_ld_theme_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
+
 function school_ld_theme_scripts() {
+    wp_enqueue_style( 
+        'fwd-googlefonts', //unique handle
+        'href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap', // url
+        array(), // dependencies
+        null // version, must be set to null for Google Fonts to load multiple font families 
+    );
+
 	wp_enqueue_style( 'school-ld-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'school-ld-theme-style', 'rtl', 'replace' );
 
