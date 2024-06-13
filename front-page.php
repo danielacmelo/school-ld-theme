@@ -32,6 +32,7 @@ get_header();
         <section class="blog-posts">
         <h2><?php esc_html_e( 'Recent News', 'school-ld' ); ?></h2> 
                 <?php
+                // The Query for the blog posts News
                 $args = array(
                     'post_type' => 'post',
                     'posts_per_page' => 3,

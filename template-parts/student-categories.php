@@ -16,10 +16,13 @@
                 ),
             );
 
+            // The Query
             $query = new WP_Query($args);
 
+            // Get the current post ID
             $current_id = get_the_ID();
 
+            // The Loop
             if ($query->have_posts()) {
                 echo "<h3>Meet other " . $term->name . " students</h3>";
                 echo "<div class='others-students'>";

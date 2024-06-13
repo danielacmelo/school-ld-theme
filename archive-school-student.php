@@ -16,13 +16,13 @@ get_header();
 
 			<header class="page-header">
 				<?php
-				// the_archive_title( '<h1 class="page-title">', '</h1>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 
 			<?php
 
+            // Start the Loop
             $args = array(
                 'post_type'      => 'school-student',
                 'posts_per_page' => -1,
@@ -30,8 +30,11 @@ get_header();
                 'order'          => 'ASC'
             );
             
+
+            // The Query
             $query = new WP_Query( $args );
 
+            // The Loop
             if ( $query->have_posts() ) {
                 echo '<section class="students">';
                 while( $query->have_posts() ) {

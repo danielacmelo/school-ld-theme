@@ -58,7 +58,7 @@ function school_ld_theme_setup() {
 	register_nav_menus(
 		array(
 			'header' => esc_html__( 'Header Menu Location', 'school' ),
-            'footer-right' => esc_html__( 'Footer - Right Side', 'school' ),
+            'footer-menu' => esc_html__('Footer Menu', 'school'),
 		)
 	);
 
