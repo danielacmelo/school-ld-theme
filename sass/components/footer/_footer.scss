@@ -1,12 +1,7 @@
+
 .site-footer {
     background-color: $color__background-footer;
-    display:flex;
-    justify-content: space-between;
-    color: $color__text-footer;
-    text-align: center;
-
-    img {
-        width: 150px;
-        height: 150px;
-    }
+    color:$color__text-footer;
+    padding: 1.25rem 0;
 }
+

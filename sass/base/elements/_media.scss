@@ -13,3 +13,30 @@ img {
 figure {
 	margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
 }
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+.schedule {
+	width: 100%;
+	border-collapse: collapse;
+
+    th,
+    td {
+	border: transparent;
+	text-align: center;
+	height: 5.625rem
+    }      
+
+    th {
+	background-color: $color__background-th;
+	font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+	background-color: $color__background-td;
+    }
+}
+
