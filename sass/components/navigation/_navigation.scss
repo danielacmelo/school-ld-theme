@@ -24,13 +24,17 @@
 
     .menu-toggle {
         display: none;
-        background-color: $color__text-light;
+        background-color: $color__background-header;
         border: none;
         color: $color__background-header;
         font-size: 1rem;
         padding: 0.5rem 1rem;
         cursor: pointer;
-    }
+    
+        svg path {
+            fill: $color__text-light;
+        }
+        
 
     .main-navigation {
         display: block;
