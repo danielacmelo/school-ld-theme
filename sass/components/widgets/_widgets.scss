@@ -1,8 +1,37 @@
 .widget {
-	margin: 0 0 1.5em;
+    margin: 0 0 1.5em;
 
-	// Make sure select elements fit in widgets.
-	select {
-		max-width: 100%;
-	}
+    // Make sure select elements fit in widgets.
+    select {
+        max-width: 100%;
+    }
+}
+
+.widget-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 80%;
+
+    section {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    li {
+        list-style: disc;
+    }
+}
+
+@media (min-width: 55em) {
+    .widget-area {
+        flex-direction: row;
+        justify-content: center;
+
+        section {
+            width: 20%;
+            margin: 0 20px;
+        }
+    }
 }
