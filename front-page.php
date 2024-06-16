@@ -30,29 +30,29 @@ get_header();
         </div><!-- .entry-content -->         
 
         <section class="blog-posts">
-        <h2><?php esc_html_e( 'Recent News', 'school-ld' ); ?></h2> 
-                <?php
-                // The Query for the blog posts News
-                $args = array(
-                    'post_type' => 'post',
-                    'posts_per_page' => 3,
-                );
-                $blog_query = new WP_Query( $args );
-                if ( $blog_query -> have_posts() ) {
-                    while ( $blog_query->have_posts() ) {
-                        $blog_query -> the_post();
-                        ?>
-                        <article>
-                            <a href="<?php the_permalink(); ?>"> 
-                                <?php the_post_thumbnail( '300x200' ); ?>
-                                <h3><?php the_title(); ?></h3>
-                            </a> 
-                        </article>       
-                        <?php 
+            <h2><?php esc_html_e( 'Recent News', 'school-ld' ); ?></h2> 
+                    <?php
+                    // The Query for the blog posts News
+                    $args = array(
+                        'post_type' => 'post',
+                        'posts_per_page' => 3,
+                    );
+                    $blog_query = new WP_Query( $args );
+                    if ( $blog_query -> have_posts() ) {
+                        while ( $blog_query->have_posts() ) {
+                            $blog_query -> the_post();
+                            ?>
+                            <article>
+                                <a href="<?php the_permalink(); ?>"> 
+                                    <?php the_post_thumbnail( '300x200' ); ?>
+                                    <h3><?php the_title(); ?></h3>
+                                </a> 
+                            </article>       
+                            <?php 
+                        }
+                        wp_reset_postdata();
                     }
-                    wp_reset_postdata();
-                }
-                ?> 
+                    ?> 
         </section>
 	
         <?php
