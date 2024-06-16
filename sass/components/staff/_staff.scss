@@ -1,0 +1,27 @@
+.page-id-92 {
+    .site-main {
+
+        h2 {
+            text-decoration: underline;
+        }
+    }
+
+    @media screen and (min-width: 50em) {
+        .staff-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .staff-wrapper h2 {
+            width: 100%;
+        }
+
+        .staff-item {
+             width: 48%;
+
+        }
+    }
+
+} 
