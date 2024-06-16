@@ -292,7 +292,7 @@ add_filter( 'excerpt_length', 'school_excerpt_length', 999 );
 // Change the excerpt more text only for the school-student CPT
 function school_excerpt_more( $more ) {
     if (is_post_type_archive('school-student') || is_singular('school-student')) {
-        $more =  '<a href="'. esc_url(get_permalink()) . '">'. __( 'Read More about the Student...'). '</a>';
+        $more =  '<br><a href="'. esc_url(get_permalink()) . '">'. __( 'Read More about the Student...'). '</a>';
     }
     return $more;
 }
