@@ -1,7 +1,11 @@
 .home {
+
+    h1 {
+        text-align: left;
+    }    
+
     .site {
 
-    
         @media screen and (min-width: 37.5em) {
 
             .blog-posts {
@@ -27,19 +31,16 @@
                 display: flex;
                 padding: .625rem;
             
-            .blog_group1, 
-            .blog_group2 {
-                flex:1;
+                .blog_group1, 
+                .blog_group2 {
+                    flex:1;
 
-                div {
-                    display: block;
-                }
-
-            }    
+                    div {
+                        display: block;
+                    }
+                }    
+            } 
             
-            }
-
         }
     }
 }
-
