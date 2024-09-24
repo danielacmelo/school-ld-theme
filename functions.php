@@ -203,24 +203,20 @@ function school_ld_theme_scripts() {
             _S_VERSION,
             true 
         );
-
-        // Add inline script to initialize AOS
-        add_action('wp_footer', 'initialize_aos_script', 20);
-
-    }
-    
+    }   
 }
 add_action( 'wp_enqueue_scripts', 'school_ld_theme_scripts' );
 
 function initialize_aos_script() {
-    echo '<script>
-        document.addEventListener("DOMContentLoaded", function() {
-            AOS.init();
-        });
-    </script>';
+    if ( is_singular('post') || is_home() ) { 
+        echo '<script>
+            document.addEventListener("DOMContentLoaded", function() {
+                AOS.init();
+            });
+        </script>';
+    }  
 }
-
-
+add_action('wp_footer', 'initialize_aos_script', 20);
 
 /**
  * Implement the Custom Header feature.
