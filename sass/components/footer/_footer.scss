@@ -26,6 +26,10 @@
             align-items: center;
             flex-direction: column;
 
+            p{
+                margin-top: 0;
+            }
+
             a {
                 color: $color__text-light;
                 transition: color 0.3s;
@@ -45,6 +49,8 @@
 
             ul{
                 list-style-type: none;
+                margin-left: 0;
+                padding-left: 0;
                 
             }
 
