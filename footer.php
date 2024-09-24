@@ -26,7 +26,7 @@
                     <section class="footer-credits">
                         <h2>Credits</h2>
                         <p>Created by: 
-                            <strong><a href="https://wp.bcitwebdeveloper.ca/">Dani Melo</a></strong></p>
+                            <strong><a href="https://github.com/danielacmelo/">Dani Melo</a></strong></p>
                         <p>Photos courtesy of:
                             <strong><a href="https://burst.shopify.com">Burst</a><strong></p>
                     </section>
